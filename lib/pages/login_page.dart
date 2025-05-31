@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_chat/components/text_field.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({ super.key });
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
+
+  LoginPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +32,21 @@ class LoginPage extends StatelessWidget {
 
           const SizedBox(height: 25),
 
-          CustomTextField(hintText: "Email..."),
+          CustomTextField(
+            hintText: "Email...",
+            obscureText: false,
+            controller: _emailController,
+          ),
+
           const SizedBox(height: 15),
-          CustomTextField(hintText: "Password...")
+
+          CustomTextField(
+            hintText: "Password...",
+            obscureText: true,
+            controller: _passwordController,
+          ),
+
+          const SizedBox(height: 15),
 
         ],
       ),
