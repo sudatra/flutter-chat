@@ -21,7 +21,7 @@ class CustomButton extends StatelessWidget {
         ),
         padding: EdgeInsets.all(25),
         margin: EdgeInsets.symmetric(horizontal: 25),
-        child: Center(child: Text("Button")),
+        child: Center(child: Text(text)),
       )
     );
   }
