@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_chat/auth/login_or_register.dart';
+import 'package:flutter_chat/services/auth/login_or_register.dart';
 import 'package:flutter_chat/pages/home_page.dart';
 
 class AuthGate extends StatelessWidget {
