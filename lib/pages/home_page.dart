@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
     return StreamBuilder(
       stream: _chatService.getUsersStream(),
       builder: (context, snapshot) {
-        if(snapshot.hasData) {
+        if(snapshot.hasError) {
           return const Text("Error");
         }
 
