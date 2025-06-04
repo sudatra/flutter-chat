@@ -13,7 +13,7 @@ class ChatPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Center(
-          child: Text("Home", textAlign: TextAlign.center)
+          child: Text(receiverEmail, textAlign: TextAlign.center)
         ),
         backgroundColor: Theme.of(context).colorScheme.primary
       ),
