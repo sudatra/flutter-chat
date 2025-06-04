@@ -6,6 +6,11 @@ class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
 
+  // get current logged in user
+  User? getCurrentUser() {
+    return _auth.currentUser;
+  }
+
   // login
   Future<UserCredential> signInWithEmailAndPassord(
     String email,
