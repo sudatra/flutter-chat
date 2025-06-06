@@ -2,12 +2,18 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_chat/services/auth/auth_gate.dart';
 import 'package:flutter_chat/firebase_options.dart';
-import 'package:flutter_chat/themes/light_mode.dart';
+import 'package:flutter_chat/themes/theme_provider.dart';
+import 'package:provider/provider.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  runApp(const MainApp());
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => ThemeProvider(),
+      child: const MainApp(),
+    )
+  );
 }
 class MainApp extends StatelessWidget {
   const MainApp({ super.key });
@@ -17,7 +23,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: true,
       home: AuthGate(),
-      theme: lightMode,
+      theme: Provider.of<ThemeProvider>(context).themeData,
     );
   }
 }
